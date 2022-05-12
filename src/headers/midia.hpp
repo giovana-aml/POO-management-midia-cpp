@@ -1,3 +1,6 @@
+#ifndef Midia_HPP // Lembra disso
+#define Midia_HPP
+
 #include <iostream>
 #include <vector>
 
@@ -14,23 +17,35 @@ class Midia
   int numeroAcessos;
 
 public:
-  Midia(string titulo, vector<string> artistas, int data, int duracao, vector<string> keywords)
+  Midia()
+  {
+    vector<string> artistas;
+    vector<string> keywords;
+    setTitulo(".");
+    setArtistas(artistas);
+    setData(0);
+    setDuracao(0);
+    setKeywords(keywords);
+    setNumeroAcessos(0);
+  }
+
+  Midia(string titulo, vector<string> artistas, int data, int duracao, vector<string> keywords, int numeroAcessos)
   {
     setTitulo(titulo);
     setArtistas(artistas);
     setData(data);
     setDuracao(duracao);
     setKeywords(keywords);
-    setNumeroAcessos(0);
+    setNumeroAcessos(numeroAcessos);
   }
 
   void setTitulo(string titulo)
   {
-    titulo = titulo;
+    this->titulo = titulo; // O this é importante para acessar o membro da classe
   }
   string getTitulo()
   {
-    return titulo;
+    return this->titulo; // Lembra disso
   }
 
   void setArtistas(vector<string> artistas)
@@ -82,3 +97,5 @@ public:
     int atualNumeroAcessos = getNumeroAcessos() + 1;
   }
 };
+
+#endif

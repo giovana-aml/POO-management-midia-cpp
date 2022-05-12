@@ -1,4 +1,8 @@
+#ifndef Filme_HPP
+#define Filme_HPP
+
 #include <vector>
+#include "midia.hpp"
 
 using namespace std;
 
@@ -18,7 +22,8 @@ class Filme
   vector<GenerosDeFilme> generoFilme;
 
 public:
-  Filme(vector<FormatosDeVideo> formatoVideo, vector<GenerosDeFilme> generoFilme)
+  Filme(vector<FormatosDeVideo> formatoVideo, vector<GenerosDeFilme> generoFilme,
+        string titulo, vector<string> artistas, int data, int duracao, vector<string> keywords, int numeroAcessos) : Midia(titulo, artistas, data, duracao, keywords, numeroAcessos)
   {
     setFormatoDeVideo(formatoVideo);
     setGeneroDeFilme(generoFilme);
@@ -42,3 +47,5 @@ public:
     return generoFilme;
   }
 };
+
+#endif
