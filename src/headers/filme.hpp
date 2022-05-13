@@ -8,15 +8,25 @@ using namespace std;
 
 enum FormatosDeVideo
 {
+  AVI,
+  MKV,
+  MP4,
+  FLV
 
 };
 
 enum GenerosDeFilme
 {
+  Terror,
+  Suspense,
+  Acao,
+  Drama,
+  Documentario,
+  Comedia
 
 };
 
-class Filme
+class Filme : public Midia
 {
   vector<FormatosDeVideo> formatoVideo;
   vector<GenerosDeFilme> generoFilme;
