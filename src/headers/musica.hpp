@@ -10,13 +10,21 @@ using namespace std;
 enum FormatoDeAudio
 {
   mp3,
-  AAC
+  AAC,
+  OGG, 
+  WMA
+
 };
 
 enum GeneroDeMusica
 {
   Rock,
-  Heavy_Metal
+  Heavy_Metal,
+  Eletronica,
+  Blues,
+  Jazz,
+  Pop,
+  Samba
 
 };
 
